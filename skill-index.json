@@ -1,0 +1,110 @@
+{
+  "name": "Agent Engineering Verification Skill Pack",
+  "version": "1.1-public-clean",
+  "status": "evidence-grounded-generalization",
+  "source": "Anonymized real-world tool-using-agent engineering incidents",
+  "core_principle": "Test Execution != Observed Reality != Requirement Status",
+  "skills": [
+    {
+      "skill_id": "agent.verify.reality-grounded-acceptance.v1",
+      "title": "Reality-Grounded Acceptance",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/reality-grounded-acceptance.md"
+    },
+    {
+      "skill_id": "agent.verify.false-green.v1",
+      "title": "False-Green Detection",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/false-green-detection.md"
+    },
+    {
+      "skill_id": "agent.verify.production-path.v1",
+      "title": "Production-Path Verification",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/production-path-verification.md"
+    },
+    {
+      "skill_id": "agent.verify.artifact-integrity.v1",
+      "title": "Artifact and Evidence Integrity",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/artifact-evidence-integrity.md"
+    },
+    {
+      "skill_id": "agent.verify.approval-resume.v1",
+      "title": "Approval / WAITING / Resume Verification",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/approval-resume-verification.md"
+    },
+    {
+      "skill_id": "agent.verify.process-lifecycle.v1",
+      "title": "Process Lifecycle Verification",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/process-lifecycle-verification.md"
+    },
+    {
+      "skill_id": "agent.verify.dependency-truth.v1",
+      "title": "Dependency Truth Verification",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/dependency-truth-verification.md"
+    },
+    {
+      "skill_id": "agent.verify.candidate-identity.v1",
+      "title": "Candidate Identity Verification",
+      "class": "core",
+      "type": "verifier",
+      "path": "skills/core/candidate-identity-verification.md"
+    },
+    {
+      "skill_id": "agent.diagnose.environment-vs-code.v1",
+      "title": "Environment vs Code Diagnosis",
+      "class": "core",
+      "type": "diagnostic",
+      "path": "skills/core/environment-vs-code-diagnosis.md"
+    },
+    {
+      "skill_id": "agent.verify.frontend-runtime-truth.v1",
+      "title": "Frontend Runtime Truth Verification",
+      "class": "conditional",
+      "type": "verifier",
+      "path": "skills/conditional/frontend-runtime-truth-verification.md"
+    },
+    {
+      "skill_id": "agent.build.external-app-safe-startup.v1",
+      "title": "External Application Safe Startup & Recovery",
+      "class": "conditional",
+      "type": "builder_diagnostic",
+      "path": "skills/conditional/external-app-safe-startup-recovery.md"
+    }
+  ],
+  "playbooks": [
+    {
+      "title": "Final Candidate Freeze",
+      "path": "playbooks/final-candidate-freeze.md"
+    },
+    {
+      "title": "Independent Audit Adjudication",
+      "path": "playbooks/independent-audit-adjudication.md"
+    }
+  ],
+  "roles": [
+    {
+      "title": "Agent Engineering Inspector / 项目工程质检员",
+      "path": "roles/agent-engineering-inspector.md"
+    }
+  ],
+  "not_generalized": [
+    "universal POC sufficiency criteria",
+    "full visual correctness of every product UI",
+    "complete multi-tool restart persistence",
+    "universal workflow recovery",
+    "universal provider/plugin production-whitelist maturity",
+    "a project-specific repository model as a universal persistence model"
+  ]
+}
