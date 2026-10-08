@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agent-verification-zh",
+  "version": "1.2.0",
+  "description": "真实证据驱动的智能体审计与验收",
+  "author": {
+    "name": "starlight-girl",
+    "url": "https://github.com/starlight-girl"
+  },
+  "license": "Apache-2.0",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "智能体工程验收 中文版",
+        "shortDescription": "真实证据驱动的智能体审计与验收",
+        "longDescription": "面向工具型智能体的工程质检技能包：11 项专项技能、2 份流程手册和项目工程质检员角色。默认只读审计，区分测试执行、实际观测与需求状态。中文操作指南附完整英文原始契约；运行时观测取决于宿主工具与授权，缺失证据不得判定成功。免费开源，无内置服务器或遥测。",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "请只读审计我的智能体项目，依据当前证据列出最小阻塞项。",
+          "请检查这些通过的测试是否证明正式生产路径实际可用。"
+        ],
+        "websiteURL": "https://github.com/starlight-girl/agent-engineering-verification-skills",
+        "supportURL": "https://github.com/starlight-girl/agent-engineering-verification-skills/blob/main/SUPPORT.md",
+        "privacyPolicyURL": "https://github.com/starlight-girl/agent-engineering-verification-skills/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/starlight-girl/agent-engineering-verification-skills/blob/main/TERMS.md",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "commerce": false
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Initial portable plugin release in separate English and Chinese editions; preserves original v1.1 contracts."
+      }
+    }
+  }
+}

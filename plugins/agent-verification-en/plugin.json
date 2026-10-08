@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agent-verification-en",
+  "version": "1.2.0",
+  "description": "Evidence-grounded agent audits",
+  "author": {
+    "name": "starlight-girl",
+    "url": "https://github.com/starlight-girl"
+  },
+  "license": "Apache-2.0",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Agent Verification EN",
+        "shortDescription": "Evidence-grounded agent audits",
+        "longDescription": "Read-only engineering verification workflows for tool-using AI agents: 11 scoped skills, two playbooks, and an inspector role. Distinguish test execution, observed reality, and requirement status. Runtime access depends on the host and user authorization; missing evidence remains unverified. Free, open source, no bundled server or telemetry.",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Audit my agent project using current evidence and report the minimum blockers.",
+          "Check whether these passing tests prove the real production path."
+        ],
+        "websiteURL": "https://github.com/starlight-girl/agent-engineering-verification-skills",
+        "supportURL": "https://github.com/starlight-girl/agent-engineering-verification-skills/blob/main/SUPPORT.md",
+        "privacyPolicyURL": "https://github.com/starlight-girl/agent-engineering-verification-skills/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/starlight-girl/agent-engineering-verification-skills/blob/main/TERMS.md",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "commerce": false
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Initial portable plugin release in separate English and Chinese editions; preserves original v1.1 contracts."
+      }
+    }
+  }
+}

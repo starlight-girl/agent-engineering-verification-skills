@@ -1,4 +1,22 @@
-# Agent Engineering Verification Skill Pack v1.1
+# Agent Engineering Verification Plugins v1.2.0
+
+Free, open-source **ChatGPT / Codex compatible skills-only plugins**, with separate English and Chinese editions. Based on the original v1.1 operational contracts below.
+
+免费开源的智能体工程质检插件，提供中文和英文两个独立版本。每版包含 11 项技能、2 份流程手册和 1 个项目工程质检员入口。中文版本提供中文操作指南和报告，保留完整英文原始契约。
+
+[Download / 下载](https://github.com/starlight-girl/agent-engineering-verification-skills/releases/latest) · [Install / 安装说明](INSTALL.md) · [使用支持 / Support](SUPPORT.md) · [Privacy / 隐私](PRIVACY.md) · [Terms / 条款](TERMS.md)
+
+```sh
+codex plugin marketplace add starlight-girl/agent-engineering-verification-skills --ref v1.2.0
+codex plugin add agent-verification-zh@agent-engineering-verification
+```
+
+For English: `codex plugin add agent-verification-en@agent-engineering-verification`.
+Start a new chat after installing. Current hosts with plugin marketplace support are required.
+
+**Publication status:** GitHub downloads and local marketplace distribution are separate from the universal OpenAI public directory. No approved directory listing is claimed. See [installation boundaries](INSTALL.md).
+
+## Original skill pack v1.1
 
 A reusable, evidence-grounded skill pack for building and independently verifying tool-using AI agents.
 
