@@ -90,19 +90,19 @@ def build():
         for file in ('LICENSE','STANDARD_SKILL_CONTRACT.md','SKILL_CLASSIFICATION.md','SUPPORT.md','PRIVACY.md','TERMS.md'):
             write(base/file, (ROOT/file).read_text(encoding='utf-8'))
         for directory in ('case-studies','design-notes'):
-            for source in sorted((ROOT/directory).rglob('*.md')):
+            for source in sorted((ROOT/directory).rglob('*.md'), key=lambda p:p.as_posix()):
                 write(base/'references'/directory/source.relative_to(ROOT/directory), source.read_text(encoding='utf-8'))
         # Full original documents and index remain available to either language edition.
         for path in paths:
             write(base/'skills'/Path(path).stem/'source-contract.md', (ROOT/path).read_text(encoding='utf-8'))
         shutil.copytree(ROOT/'assets', base/'assets', dirs_exist_ok=True)
         write(base/'README.md', f'# {interface["displayName"]}\n\nVersion {VERSION}. Apache-2.0.\n\n'+interface['longDescription']+'\n\nSource and installation: '+REPO+'\n\nPublic OpenAI directory approval is separate from GitHub distribution.\n')
-        files = sorted(p for p in base.rglob('*') if p.is_file() and p.name != 'SHA256SUMS')
+        files = sorted((p for p in base.rglob('*') if p.is_file() and p.name != 'SHA256SUMS'), key=lambda p:p.as_posix())
         write(base/'SHA256SUMS', ''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(base).as_posix()+'\n' for p in files))
         archive = ROOT/'dist'/f'{name}-{VERSION}.zip'
         archive.parent.mkdir(exist_ok=True)
         with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as z:
-            for p in sorted(base.rglob('*')):
+            for p in sorted(base.rglob('*'), key=lambda p:p.as_posix()):
                 if p.is_file():
                     info = zipfile.ZipInfo(name+'/'+p.relative_to(base).as_posix(), date_time=(2026,10,8,0,0,0))
                     info.compress_type = zipfile.ZIP_DEFLATED

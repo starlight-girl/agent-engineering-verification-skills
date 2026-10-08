@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import zipfile
 from PIL import Image
+from jsonschema import Draft202012Validator
 from build_plugins import ROOT, VERSION, GUIDES
 
 def validate():
@@ -24,6 +25,8 @@ def validate():
             assert all(n.startswith(name+'/') and '..' not in Path(n).parts for n in names)
             assert not any(n.endswith(('.app.json','mcp.json','.exe','.dll','.env')) for n in names)
             manifest = json.loads(z.read(name+'/plugin.json'))
+            schema = json.loads((ROOT/'scripts/plugin.schema.json').read_text(encoding='utf-8'))
+            Draft202012Validator(schema).validate(manifest)
             overlay = json.loads(z.read(name+'/.codex-plugin/plugin.json'))
             assert manifest['name'] == name and manifest['version'] == VERSION
             assert overlay['interface'] == manifest['extensions']['com.openai']['interface']
